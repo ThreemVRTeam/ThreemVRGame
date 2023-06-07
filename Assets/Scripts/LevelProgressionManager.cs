@@ -1,7 +1,10 @@
 using System;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
-[Serializable, ] public struct Puzzle
+[Serializable] public struct Puzzle
 {
     [HideInInspector] public string identifier;
     [HideInInspector] public int number;
@@ -11,6 +14,7 @@ using UnityEngine;
 
 [ExecuteInEditMode] public class LevelProgressionManager : MonoBehaviour
 {
+    [Tooltip("Place each of the elements for a puzzle inside an empty parent and reference the parent here.")]
     public Puzzle[] puzzles;
     private int currentPuzzle = 0;
 
@@ -26,25 +30,46 @@ using UnityEngine;
             currentPuzzle++;
     }
 
-    [ContextMenu("Refresh Puzzle Names")] private void NamePuzzleElements()
+    /// <summary>
+    /// Updates all the puzzle elements identifiers and numbers to appropriate ones, based on their order in the list.
+    /// </summary>
+    public void NamePuzzleElements()
     {
         for (int i = 0; i < puzzles.Length; i++)
         {
             if (Application.isPlaying)
                 break;
 
-            Puzzle currentPuzzle = puzzles[i];
-            currentPuzzle.number = i;
+            puzzles[i].number = i;
 
             if (i == 0)
-                currentPuzzle.identifier = "Tutorial";
+                puzzles[i].identifier = "Tutorial";
             else if (i == puzzles.Length - 1)
-                currentPuzzle.identifier = "Final Puzzle";
+                puzzles[i].identifier = "Final Puzzle";
             else
-                currentPuzzle.identifier = "Puzzle " + i.ToString();
-
-            puzzles[i] = currentPuzzle;
+                puzzles[i].identifier = "Puzzle " + i.ToString();
         }
     }
 
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(LevelProgressionManager)), Serializable]
+public class LevelProgressionManagerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        LevelProgressionManager script = (LevelProgressionManager)target;
+
+        EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.Space();
+            if (GUILayout.Button("Refresh Names", EditorStyles.miniButton, GUILayout.MaxWidth(100))) script.NamePuzzleElements();
+            EditorGUILayout.Space();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+    }
+}
+#endif
