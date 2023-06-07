@@ -1,15 +1,13 @@
 using System;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-[Serializable] public struct Puzzle
+[Serializable, ] public struct Puzzle
 {
     [HideInInspector] public string puzzleName;
     [HideInInspector] public int number;
 
     public GameObject objectsParent;
 }
-
 
 [ExecuteInEditMode] public class LevelProgressionManager : MonoBehaviour
 {
@@ -20,11 +18,11 @@ using UnityEngine;
     {
         for (int i = 0; i < puzzles.Length; i++)
         {
+            if (Application.isPlaying)
+                break;
+
             puzzles[i].number = i;
 
-            if (puzzles[i].puzzleName == null)
-                continue;
-            
             if (i == 0)
                 puzzles[i].puzzleName = "Tutorial";
             else if (i == puzzles.Length - 1)
@@ -37,6 +35,7 @@ using UnityEngine;
     public void ProgressGame()
     {
         puzzles[currentPuzzle].objectsParent.SetActive(true);
-        currentPuzzle++;
+        if (currentPuzzle == puzzles.Length)
+            currentPuzzle++;
     }
 }
