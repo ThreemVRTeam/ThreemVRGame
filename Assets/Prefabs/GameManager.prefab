@@ -45,18 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzles:
-  - puzzleName: Tutorial
+  - identifier: Tutorial
     number: 0
     objectsParent: {fileID: 0}
-  - puzzleName: Puzzle 1
+  - identifier: Puzzle 1
     number: 1
     objectsParent: {fileID: 0}
-  - puzzleName: Puzzle 2
+  - identifier: Puzzle 2
     number: 2
     objectsParent: {fileID: 0}
-  - puzzleName: Puzzle 3
+  - identifier: Puzzle 3
     number: 3
     objectsParent: {fileID: 0}
-  - puzzleName: Final Puzzle
+  - identifier: Final Puzzle
     number: 4
     objectsParent: {fileID: 0}

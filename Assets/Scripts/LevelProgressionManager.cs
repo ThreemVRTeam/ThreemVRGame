@@ -33,15 +33,17 @@ using UnityEngine;
             if (Application.isPlaying)
                 break;
 
-            Puzzle puzzle = puzzles[i];
-            puzzle.number = i;
+            Puzzle currentPuzzle = puzzles[i];
+            currentPuzzle.number = i;
 
             if (i == 0)
-                puzzle.identifier = "Tutorial";
+                currentPuzzle.identifier = "Tutorial";
             else if (i == puzzles.Length - 1)
-                puzzle.identifier = "Final Puzzle";
+                currentPuzzle.identifier = "Final Puzzle";
             else
-                puzzle.identifier = "Puzzle " + i.ToString();
+                currentPuzzle.identifier = "Puzzle " + i.ToString();
+
+            puzzles[i] = currentPuzzle;
         }
     }
 
