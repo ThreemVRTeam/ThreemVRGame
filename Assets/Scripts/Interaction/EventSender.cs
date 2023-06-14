@@ -1,12 +1,34 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Interaction
 {
     public class EventSender : MonoBehaviour
     {
-        [SerializeField] private List<EventReceiver> targets;
+        [SerializeField] List<GameObject> eventReceiverObjects;
+        private List<EventReceiver> targets;
+
+        private void Awake()
+        {
+            FindEventReceivers();
+        }
+
+        /// <summary>
+        /// Calls on Awake(), and should be called again if the eventReceiverObjects list is updated.
+        /// </summary>
+        public void FindEventReceivers()
+        {
+            foreach (var eventReceiverObject in eventReceiverObjects)
+            {
+                List<EventReceiver> eventReceivers = eventReceiverObject.GetComponents<EventReceiver>().ToList();
+
+                foreach (var eventReceiver in eventReceivers)
+                    targets.Add(eventReceiver);
+                eventReceivers.Clear();
+            }
+        }
 
         /// <summary>
         /// Sends an Activate() message to all targets specified in the inspector.
@@ -31,7 +53,6 @@ namespace Interaction.CustomInspector
     [CustomEditor(typeof(EventSender)), Serializable]
     public class EventSenderEditor : Editor
     {
-
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
