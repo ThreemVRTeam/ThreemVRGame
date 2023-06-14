@@ -6,7 +6,6 @@ namespace Interaction
 {
     public class EventSender : MonoBehaviour
     {
-
         [SerializeField] private List<EventReceiver> targets;
 
         /// <summary>
@@ -32,6 +31,7 @@ namespace Interaction.CustomInspector
     [CustomEditor(typeof(EventSender)), Serializable]
     public class EventSenderEditor : Editor
     {
+
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
