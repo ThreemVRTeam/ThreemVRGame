@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Interaction
 {
-    public sealed class Openable : EventReceiver
+    [ExecuteInEditMode] public sealed class Openable : EventReceiver
     {
         private Transform transformReference;
 
@@ -18,12 +17,14 @@ namespace Interaction
 
         private float startTime;
         private float finishTime;
-        [SerializeField] float duration;
+        [SerializeField, Range(0.1f,10f)] float duration;
         private bool opening = false;
 
-        [SerializeField] float slideAmount;
-        [SerializeField] float rotateAmount;
-        [SerializeField] float scaleAmount;
+        [Space()]
+
+        [SerializeField] Vector3 slideAmount;
+        [SerializeField] Vector3 rotateAmount;
+        [SerializeField] Vector3 scaleAmount;
 
         float ProgressPercent()
         {
@@ -33,6 +34,14 @@ namespace Interaction
         public override void InitialiseComponents()
         {
             transformReference = gameObject.transform;
+
+            closedPosition = transformReference.position;
+            closedRotation = transformReference.rotation;
+            closedScale = transformReference.localScale;
+
+            openPosition = closedPosition + slideAmount;
+            openRotation = closedRotation * Quaternion.Euler(rotateAmount);
+            openScale = closedScale + scaleAmount;
         }
 
         public override void Activate()
@@ -44,18 +53,21 @@ namespace Interaction
 
         private void Update()
         {
-            if (opening)
+            if (!opening) return;
+
+            bool finished = Time.time >= finishTime;
+
+            if (!finished)
             {
-                if (Time.time >= finishTime)
-                {
-                    transformReference.SetPositionAndRotation(openPosition, openRotation);
-                    transformReference.localScale = openScale;
-                    opening = false;
-                }
-                else
-                {
-                    //opening lerp
-                }
+                transformReference.position = closedPosition + slideAmount * ProgressPercent();
+                transformReference.rotation = closedRotation * Quaternion.Euler(rotateAmount * ProgressPercent());
+                transformReference.localScale = closedScale + scaleAmount * ProgressPercent();
+            }
+            else
+            {
+                transformReference.SetPositionAndRotation(openPosition, openRotation);
+                transformReference.localScale = openScale;
+                opening = false;
             }
         }
     }
