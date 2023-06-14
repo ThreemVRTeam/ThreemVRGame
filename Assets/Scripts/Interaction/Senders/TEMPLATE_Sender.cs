@@ -14,6 +14,6 @@ namespace Interaction.CustomInspector
     using UnityEditor;
 
     [CustomEditor(typeof(TEMPLATE_Sender)), Serializable]
-    public class ButtonEditor : EventSenderEditor { }
+    public class TEMPLATE_SenderEditor : EventSenderEditor { }
 #endif
 }
