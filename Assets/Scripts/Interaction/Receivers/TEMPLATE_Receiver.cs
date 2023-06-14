@@ -22,6 +22,6 @@ namespace Interaction.CustomInspector
     using UnityEditor;
 
     [CustomEditor(typeof(TEMPLATE_Receiver)), Serializable]
-    public class DoorEditor : EventReceiverEditor { }
+    public class TEMPLATE_ReceiverEditor : EventReceiverEditor { }
 #endif
 }

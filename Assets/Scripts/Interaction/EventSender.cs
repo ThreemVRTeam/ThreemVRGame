@@ -11,10 +11,14 @@ namespace Interaction
         /// <summary>
         /// Sends an Activate() message to all targets specified in the inspector.
         /// </summary>
-        public void ActivateTargets()
+        public virtual void ActivateTargets()
         {
-            for (int i = 0; i < targets.Count; i++)
-                targets[i].Activate();
+            foreach (EventReceiver target in targets)
+            {
+                // null proof
+                if (target != null)
+                    target.Activate();
+            }
         }
     }
 }
@@ -35,9 +39,9 @@ namespace Interaction.CustomInspector
             EventSender script = (EventSender)target;
 
             EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.Space();
-                if (GUILayout.Button("Activate Targets", EditorStyles.miniButton, GUILayout.MaxWidth(120))) script.ActivateTargets();
-                EditorGUILayout.Space();
+            EditorGUILayout.Space();
+            if (GUILayout.Button("Activate Targets", EditorStyles.miniButton, GUILayout.MaxWidth(120))) script.ActivateTargets();
+            EditorGUILayout.Space();
             EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.Space();
