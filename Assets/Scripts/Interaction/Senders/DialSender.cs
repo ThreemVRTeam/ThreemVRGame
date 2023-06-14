@@ -1,18 +1,15 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.XR.Content.Interaction;
 
 namespace Interaction
 {
-
+    [RequireComponent(typeof(XRKnob))]
     public class DialSender : EventSender
     {
         [HideInInspector] public XRKnob knob;
-        public float targetAngle = 0;
+        [Range(-180, 180)] public int targetAngle = 0;
         private float targetValue;
         private void OnEnable()
         {
@@ -30,33 +27,4 @@ namespace Interaction
             }
         }
     }
-}
-namespace Interaction.CustomInspector
-{
-    using Unity.VisualScripting;
-    using UnityEditor;
-
-    [CustomEditor(typeof(DialSender)), Serializable]
-    public class DialSenderEditor : Editor
-    {
-
-        public DialSender dialSender;
-        public XRKnob knob;
-        private SerializedProperty targetAngle;
-        public void OnEnable()
-        {
-            dialSender = target.GetComponent<DialSender>();
-            Assert.IsNotNull(dialSender, "No XR Knob component on dial, please add XR Knob component");
-            knob = target.GetComponent<XRKnob>();
-            targetAngle = serializedObject.FindProperty("targetAngle");
-        }
-        public override void OnInspectorGUI()
-        {
-            serializedObject.Update();
-            EditorGUILayout.LabelField("Target Angle: ");
-            EditorGUILayout.IntSlider((int)targetAngle.floatValue, (int)knob.minAngle, (int)knob.maxAngle);
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
-
 }
