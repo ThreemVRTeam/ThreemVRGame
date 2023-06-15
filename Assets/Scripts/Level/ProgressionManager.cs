@@ -5,7 +5,7 @@ namespace Level
 {
     [Serializable] public struct Puzzle
     {
-        [HideInInspector] public string identifier;
+        [HideInInspector] public string name;
         [HideInInspector] public int index;
 
         public GameObject objectsParent;
@@ -40,11 +40,11 @@ namespace Level
                 puzzles[i].index = i;
 
                 if (i == 0)
-                    puzzles[i].identifier = "Tutorial";
+                    puzzles[i].name = "Tutorial";
                 else if (i == puzzles.Length - 1)
-                    puzzles[i].identifier = "Final Puzzle";
+                    puzzles[i].name = "Final Puzzle";
                 else
-                    puzzles[i].identifier = "Puzzle " + i.ToString();
+                    puzzles[i].name = "Puzzle " + i.ToString();
             }
         }
 
