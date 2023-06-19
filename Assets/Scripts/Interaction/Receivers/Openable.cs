@@ -5,7 +5,7 @@ namespace Interaction
 {
     [ExecuteInEditMode] public sealed class Openable : EventReceiver
     {
-        private Transform transformReference;
+        public Transform doorToMove;
 
         private Vector3 closedPosition;
         private Quaternion closedRotation;
@@ -33,11 +33,11 @@ namespace Interaction
 
         public override void InitialiseComponents()
         {
-            transformReference = gameObject.transform;
+            //doorToMove = gameObject.transform;
 
-            closedPosition = transformReference.position;
-            closedRotation = transformReference.rotation;
-            closedScale = transformReference.localScale;
+            closedPosition = doorToMove.position;
+            closedRotation = doorToMove.rotation;
+            closedScale = doorToMove.localScale;
 
             openPosition = closedPosition + slideAmount;
             openRotation = closedRotation * Quaternion.Euler(rotateAmount);
@@ -59,14 +59,14 @@ namespace Interaction
 
             if (!finished)
             {
-                transformReference.position = closedPosition + slideAmount * ProgressPercent();
-                transformReference.rotation = closedRotation * Quaternion.Euler(rotateAmount * ProgressPercent());
-                transformReference.localScale = closedScale + scaleAmount * ProgressPercent();
+                doorToMove.position = closedPosition + slideAmount * ProgressPercent();
+                doorToMove.rotation = closedRotation * Quaternion.Euler(rotateAmount * ProgressPercent());
+                doorToMove.localScale = closedScale + scaleAmount * ProgressPercent();
             }
             else
             {
-                transformReference.SetPositionAndRotation(openPosition, openRotation);
-                transformReference.localScale = openScale;
+                doorToMove.SetPositionAndRotation(openPosition, openRotation);
+                doorToMove.localScale = openScale;
                 opening = false;
             }
         }
