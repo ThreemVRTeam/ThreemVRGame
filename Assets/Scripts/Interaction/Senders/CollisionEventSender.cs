@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Interaction
 {
-    public class CollisonEventSender : EventSender
+    public class CollisionEventSender : EventSender
     {
 
         /// <summary>
