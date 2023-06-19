@@ -7,8 +7,6 @@ namespace Interaction
     public class CollisonEventSender : EventSender
     {
 
-        [SerializeField] private List<EventReceiver> targets;
-
         /// <summary>
         /// Sends an Activate() message to all targets specified in the inspector.
         /// </summary>
