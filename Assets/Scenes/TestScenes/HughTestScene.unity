@@ -1414,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 3012403200374909723, guid: cd18a2be9b106be42b1ff05a7d5bdca9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4470076
+      value: 0.423
       objectReference: {fileID: 0}
     - target: {fileID: 3012403200374909723, guid: cd18a2be9b106be42b1ff05a7d5bdca9,
         type: 3}
@@ -3130,5 +3130,5 @@ MonoBehaviour:
   doorToMove: {fileID: 1716225147}
   duration: 1.5
   slideAmount: {x: 0, y: 0, z: 0}
-  rotateAmount: {x: 110, y: 0, z: 0}
+  rotateAmount: {x: -100, y: 0, z: 0}
   scaleAmount: {x: 0, y: 0, z: 0}
