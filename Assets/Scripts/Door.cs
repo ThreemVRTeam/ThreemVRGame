@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-
-    public Transform handle = null;
-    private Vector3 handleOriginalPos;
-
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        handleOriginalPos = handle.localPosition;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        handle.localPosition = handleOriginalPos;
+        Physics.IgnoreLayerCollision(3, 6);
     }
 }

@@ -19,7 +19,7 @@ namespace Interaction
                     target.Activate();
             }
         }
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collision)
         {
             EventReceiver reciever = collision.gameObject.GetComponent<EventReceiver>();
             // null proof
