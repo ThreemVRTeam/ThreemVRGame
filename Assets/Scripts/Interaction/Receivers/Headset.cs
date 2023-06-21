@@ -27,7 +27,10 @@ namespace Interaction
             if (!active) return;
 
             if (other.CompareTag(playerTag))
-                progressionManager.ProgressGame();
+            {
+                StartCoroutine(progressionManager.Progress());
+                Destroy(this);
+            }
         }
     }
 }
