@@ -24,8 +24,11 @@ namespace Level
 
         private void Awake()
         {
-            ProgressGame();
             UpdatePuzzleElementDetails();
+        }
+        private void Start()
+        {
+            ProgressGame(); 
         }
 
         public void ProgressGame()
@@ -38,9 +41,9 @@ namespace Level
         public IEnumerator Progress()
         {
             levelTransitionAnimator.Play("LevelTransition");
-            yield return new WaitForSeconds(levelTransitionAnimator.runtimeAnimatorController.animationClips[1].length / 3.0f);
+            yield return new WaitForSeconds(2);
             ProgressGame();
-            yield return new WaitForSeconds(levelTransitionAnimator.runtimeAnimatorController.animationClips[1].length);
+            yield return new WaitForSeconds(3);
             levelTransitionAnimator.Play("EmptyState");
         }
 

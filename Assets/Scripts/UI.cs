@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
-    Animation startAnimation;
-    Transform mainMenu;
+    public Animation startAnimation;
+    public Transform mainMenu;
 
     public void ExitGame()
     {
@@ -13,18 +14,22 @@ public class UI : MonoBehaviour
     }
     public void StartGame()
     {
-        startAnimation.Play();
+        StartCoroutine(StartRoutine());
+    }
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public IEnumerator StartRoutine()
     {
-        StartGame();
+        startAnimation.Play();
         yield return new WaitForSeconds(startAnimation.clip.length);
         mainMenu.gameObject.SetActive(false);
     }
 
     public void ReturnToMainMenu()
     {
-        //SetActiveTrue
+        mainMenu.gameObject.SetActive(true);
     }
 }
