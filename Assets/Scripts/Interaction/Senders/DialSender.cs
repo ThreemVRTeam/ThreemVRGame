@@ -17,13 +17,12 @@ namespace Interaction
             Assert.IsNotNull(knob, "No XR Knob component on dial, please add XR Knob component");
             // map value, new value = (value - from1) / (to1 - from1) * (to2 - from2) + from2
             targetValue = (targetAngle - -180) / (180 - -180) * (1 - 0) + 0;
-            Debug.Log($"Target Value: {targetValue}");
         }
         public void CheckAngle()
         {
             if (knob.value - targetValue < 0.05)
             {
-                Debug.Log("Hitting Target Value");
+                ActivateTargets();
             }
         }
     }
