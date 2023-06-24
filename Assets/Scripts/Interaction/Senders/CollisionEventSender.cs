@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace Interaction
 {
-    public class CollisonEventSender : EventSender
+    public class CollisionEventSender : EventSender
     {
-
-        [SerializeField] private List<EventReceiver> targets;
 
         /// <summary>
         /// Sends an Activate() message to all targets specified in the inspector.
@@ -21,7 +19,7 @@ namespace Interaction
                     target.Activate();
             }
         }
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collision)
         {
             EventReceiver reciever = collision.gameObject.GetComponent<EventReceiver>();
             // null proof

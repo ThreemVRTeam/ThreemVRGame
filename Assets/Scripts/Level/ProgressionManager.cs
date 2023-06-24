@@ -1,5 +1,8 @@
+using JetBrains.Annotations;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 
 namespace Level
 {
@@ -14,6 +17,7 @@ namespace Level
     [ExecuteInEditMode]
     public class ProgressionManager : MonoBehaviour
     {
+        public Animator levelTransitionAnimator = null;
         [Tooltip("Place each of the elements for a puzzle inside an empty parent and reference the parent here.")]
         public Puzzle[] puzzles;
         private int currentPuzzle = 0;
@@ -22,12 +26,27 @@ namespace Level
         {
             UpdatePuzzleElementDetails();
         }
+        private void Start()
+        {
+            ProgressGame(); 
+        }
 
         public void ProgressGame()
         {
-            puzzles[currentPuzzle].objectsParent.SetActive(true);
+            if(puzzles[currentPuzzle].objectsParent != null)            
+                puzzles[currentPuzzle].objectsParent.SetActive(true);
+            
             if (currentPuzzle == puzzles.Length)
-                currentPuzzle++;
+                currentPuzzle++;            
+        }
+
+        public IEnumerator Progress()
+        {
+            levelTransitionAnimator.Play("LevelTransition");
+            yield return new WaitForSeconds(2);
+            ProgressGame();
+            yield return new WaitForSeconds(3);
+            levelTransitionAnimator.Play("EmptyState");
         }
 
         public void UpdatePuzzleElementDetails()
