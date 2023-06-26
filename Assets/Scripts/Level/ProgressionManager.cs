@@ -80,9 +80,19 @@ namespace Level.CustomInspector
     {
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-
             ProgressionManager script = (ProgressionManager)target;
+
+            EditorGUILayout.Space();
+
+            EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.Space();
+                if (GUILayout.Button("Progress", EditorStyles.miniButton, GUILayout.MaxWidth(120))) script.StartCoroutine(script.Progress());
+                EditorGUILayout.Space();
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.Space(10);
+
+            base.OnInspectorGUI();
 
             EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.Space();
