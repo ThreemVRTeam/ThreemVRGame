@@ -44,19 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91f9ef2f9ce17147bbb1323b1ae903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTransitionAnimator: {fileID: 0}
   puzzles:
-  - identifier: Tutorial
-    number: 0
+  - name: Tutorial
+    index: 0
     objectsParent: {fileID: 0}
-  - identifier: Puzzle 1
-    number: 1
+  - name: Puzzle 1
+    index: 1
     objectsParent: {fileID: 0}
-  - identifier: Puzzle 2
-    number: 2
+  - name: Puzzle 2
+    index: 2
     objectsParent: {fileID: 0}
-  - identifier: Puzzle 3
-    number: 3
+  - name: Puzzle 3
+    index: 3
     objectsParent: {fileID: 0}
-  - identifier: Final Puzzle
-    number: 4
+  - name: Final Puzzle
+    index: 4
     objectsParent: {fileID: 0}
