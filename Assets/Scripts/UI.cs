@@ -28,9 +28,13 @@ public class UI : MonoBehaviour
     public IEnumerator StartRoutine()
     {
         player.position = playerLocation;
-        startAnimation.Play();
-        yield return new WaitForSeconds(startAnimation.clip.length);
+        if(startAnimation != null)
+        {
+            startAnimation.Play();
+            yield return new WaitForSeconds(startAnimation.clip.length);
+        }
         mainMenu.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void ReturnToMainMenu()
