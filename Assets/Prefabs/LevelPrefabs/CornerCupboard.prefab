@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2899084450839634540}
   - component: {fileID: 1143750183246845606}
   - component: {fileID: 2849714471802646709}
+  - component: {fileID: 2557175190530136279}
   m_Layer: 0
   m_Name: CornerCupboard
   m_TagString: Untagged
@@ -99,6 +100,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5836728072050040443, guid: 60d6c58dc392e554fac104fc68d68d63, type: 3}
+--- !u!114 &2557175190530136279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504086601043081075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfc68da872f43c43a369a5c270c336a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorToMove: {fileID: 0}
+  duration: 0
+  slideAmount: {x: 0, y: 0, z: 0}
+  rotateAmount: {x: 0, y: 0, z: 0}
+  scaleAmount: {x: 0, y: 0, z: 0}
 --- !u!1 &7608813164148225394
 GameObject:
   m_ObjectHideFlags: 0
