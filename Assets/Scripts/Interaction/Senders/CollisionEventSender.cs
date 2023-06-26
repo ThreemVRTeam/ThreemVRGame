@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Interaction
 {
@@ -10,4 +11,19 @@ namespace Interaction
                 if (other.gameObject == eventReceiverObject) ActivateTargets();
         }
     }
+}
+
+namespace Interaction.CustomInspector
+{
+#if UNITY_EDITOR
+    using UnityEditor;
+    [CustomEditor(typeof(CollisionEventSender)), Serializable]
+    public class CollisionEventSenderEditor : EventSenderEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+        }
+    }
+#endif
 }
