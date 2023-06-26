@@ -112,10 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfc68da872f43c43a369a5c270c336a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorToMove: {fileID: 0}
-  duration: 0
+  doorToMove: {fileID: 9052485557306593113}
+  duration: 2
   slideAmount: {x: 0, y: 0, z: 0}
-  rotateAmount: {x: 0, y: 0, z: 0}
+  rotateAmount: {x: 0, y: 0, z: -100}
   scaleAmount: {x: 0, y: 0, z: 0}
 --- !u!1 &7608813164148225394
 GameObject:

@@ -1,8 +1,6 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Animations;
 
 namespace Level
 {
@@ -33,20 +31,32 @@ namespace Level
 
         public void ProgressGame()
         {
-            if(puzzles[currentPuzzle].objectsParent != null)            
-                puzzles[currentPuzzle].objectsParent.SetActive(true);
-            
             if (currentPuzzle == puzzles.Length)
-                currentPuzzle++;            
+            {
+                EndGame();
+            }
+            else
+            {
+                if (puzzles[currentPuzzle].objectsParent != null)
+                    puzzles[currentPuzzle].objectsParent.SetActive(true); Debug.Log("Set active");
+
+                currentPuzzle++;
+            }
         }
 
         public IEnumerator Progress()
         {
-            levelTransitionAnimator.Play("LevelTransition");
+            if (levelTransitionAnimator != null)
+                levelTransitionAnimator.Play("LevelTransition");
+            Debug.Log("Progress Started");
             yield return new WaitForSeconds(2);
+
             ProgressGame();
+
             yield return new WaitForSeconds(3);
-            levelTransitionAnimator.Play("EmptyState");
+            Debug.Log("Progress Finished");
+            if (levelTransitionAnimator != null)
+                levelTransitionAnimator.Play("EmptyState");
         }
 
         public void UpdatePuzzleElementDetails()
@@ -65,6 +75,11 @@ namespace Level
                 else
                     puzzles[i].name = "Puzzle " + i.ToString();
             }
+        }
+
+        public void EndGame()
+        {
+
         }
 
     }
