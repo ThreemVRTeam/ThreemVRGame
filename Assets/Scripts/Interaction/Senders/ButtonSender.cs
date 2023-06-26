@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 namespace Interaction
 {
@@ -12,12 +10,12 @@ namespace Interaction
         }
     }
 }
-namespace Interaction.CustomInspectors
+namespace Interaction.CustomInspector
 {
 #if UNITY_EDITOR
     using UnityEditor;
-    [CustomEditor(typeof(ButtonSender))]
-    public class ButtonSenderEditor : Editor
+    [CustomEditor(typeof(ButtonSender)), Serializable]
+    public class ButtonSenderEditor : EventSenderEditor
     {
         public override void OnInspectorGUI()
         {
