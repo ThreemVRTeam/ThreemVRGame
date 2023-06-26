@@ -27,3 +27,18 @@ namespace Interaction
         }
     }
 }
+
+namespace Interaction.CustomInspector
+{
+#if UNITY_EDITOR
+    using UnityEditor;
+    [CustomEditor(typeof(DialSender)), Serializable]
+    public class DialSenderEditor : EventSenderEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+        }
+    }
+#endif
+}
