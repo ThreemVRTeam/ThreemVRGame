@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 658349953033755586}
+  - component: {fileID: 3647569909579269728}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -34,6 +35,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3647569909579269728
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173737576623538552}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &218695983826504518
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +311,7 @@ GameObject:
   - component: {fileID: 5039238598426450379}
   - component: {fileID: 6127727622547296084}
   - component: {fileID: 373399944805098910}
+  - component: {fileID: 2539954583306491261}
   m_Layer: 0
   m_Name: DeskTop_geo
   m_TagString: Untagged
@@ -366,6 +384,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2539954583306491261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326540623483238046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 150.3057, y: 5.971077, z: 53.931133}
+  m_Center: {x: -0.0009803772, y: 93.566925, z: 7.9422665}
 --- !u!1 &3353949584911833575
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +657,7 @@ GameObject:
   - component: {fileID: 6624622472691450217}
   - component: {fileID: 503564314230053232}
   - component: {fileID: 5568988598188458508}
+  - component: {fileID: 3623362579519592922}
   m_Layer: 0
   m_Name: Desk_Low_Poly
   m_TagString: Untagged
@@ -698,6 +730,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3623362579519592922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528491812867928058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 161.70001, y: 160.91235, z: 6.86}
+  m_Center: {x: 0.000011444092, y: -8.3890915, z: 0.5}
 --- !u!1 &6393864952270412190
 GameObject:
   m_ObjectHideFlags: 0
