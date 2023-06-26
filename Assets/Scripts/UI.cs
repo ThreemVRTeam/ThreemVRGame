@@ -12,6 +12,11 @@ public class UI : MonoBehaviour
     public Vector3 menuLocation = new Vector3(8,0,0);
     public Vector3 playerLocation = Vector3.zero;
 
+    public void Start()
+    {
+        player.position = menuLocation;
+    }
+
     public void ExitGame()
     {
         Application.Quit();
@@ -28,9 +33,13 @@ public class UI : MonoBehaviour
     public IEnumerator StartRoutine()
     {
         player.position = playerLocation;
-        startAnimation.Play();
-        yield return new WaitForSeconds(startAnimation.clip.length);
+        if(startAnimation != null)
+        {
+            startAnimation.Play();
+            yield return new WaitForSeconds(startAnimation.clip.length);
+        }
         mainMenu.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void ReturnToMainMenu()
