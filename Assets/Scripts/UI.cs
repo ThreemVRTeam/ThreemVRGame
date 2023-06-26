@@ -12,6 +12,11 @@ public class UI : MonoBehaviour
     public Vector3 menuLocation = new Vector3(8,0,0);
     public Vector3 playerLocation = Vector3.zero;
 
+    public void Start()
+    {
+        player.position = menuLocation;
+    }
+
     public void ExitGame()
     {
         Application.Quit();
