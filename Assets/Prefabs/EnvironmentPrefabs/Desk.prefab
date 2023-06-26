@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 5039238598426450379}
   - component: {fileID: 6127727622547296084}
   - component: {fileID: 373399944805098910}
+  - component: {fileID: 6376749754423259744}
   m_Layer: 0
   m_Name: DeskTop_geo
   m_TagString: Untagged
@@ -366,6 +367,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6376749754423259744
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326540623483238046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 150.3057, y: 5.971077, z: 53.931133}
+  m_Center: {x: -0.0009803772, y: 93.566925, z: 7.9422665}
 --- !u!1 &3353949584911833575
 GameObject:
   m_ObjectHideFlags: 0
