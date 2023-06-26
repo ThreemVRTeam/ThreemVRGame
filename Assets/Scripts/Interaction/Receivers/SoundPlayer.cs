@@ -1,15 +1,24 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Interaction
 {
     public sealed class SoundPlayer : EventReceiver
     {
-        [SerializeField] AudioSource audioSource;
+        [SerializeField] List<AudioSource> audioSources;
 
-        public override void InitialiseComponents() => audioSource = GetComponent<AudioSource>();
+        public override void InitialiseComponents() => audioSources = GetComponents<AudioSource>().ToList();
 
-        public override void Activate() => audioSource.Play();
+        public override void Activate()
+        {
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.Play();
+            }
+        }
+
     }
 }
 
