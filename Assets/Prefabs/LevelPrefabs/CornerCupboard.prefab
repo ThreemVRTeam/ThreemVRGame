@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2275521124020825545}
   - component: {fileID: 2899084450839634540}
   - component: {fileID: 1143750183246845606}
+  - component: {fileID: 2849714471802646709}
   m_Layer: 0
   m_Name: CornerCupboard
   m_TagString: Untagged
@@ -84,6 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2849714471802646709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504086601043081075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5836728072050040443, guid: 60d6c58dc392e554fac104fc68d68d63, type: 3}
 --- !u!1 &7608813164148225394
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +110,7 @@ GameObject:
   - component: {fileID: 9052485557306593113}
   - component: {fileID: 8602054585406957688}
   - component: {fileID: 3166911946125777743}
+  - component: {fileID: 2732761772085416277}
   m_Layer: 0
   m_Name: CupboardDoor
   m_TagString: Untagged
@@ -167,3 +183,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2732761772085416277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608813164148225394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9138976087887323274, guid: 60d6c58dc392e554fac104fc68d68d63, type: 3}
