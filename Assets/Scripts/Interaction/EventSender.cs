@@ -7,7 +7,7 @@ namespace Interaction
 {
     public class EventSender : MonoBehaviour
     {
-        [SerializeField] List<GameObject> eventReceiverObjects;
+        public List<GameObject> eventReceiverObjects;
         [HideInInspector] public List<EventReceiver> targets;
 
         private void Awake()

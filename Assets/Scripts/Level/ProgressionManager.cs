@@ -33,7 +33,9 @@ namespace Level
 
         public void ProgressGame()
         {
-            puzzles[currentPuzzle].objectsParent.SetActive(true);
+            if(puzzles[currentPuzzle].objectsParent != null)            
+                puzzles[currentPuzzle].objectsParent.SetActive(true);
+            
             if (currentPuzzle == puzzles.Length)
                 currentPuzzle++;            
         }
