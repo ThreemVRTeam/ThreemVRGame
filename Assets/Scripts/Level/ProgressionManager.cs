@@ -39,7 +39,7 @@ namespace Level
             else
             {
                 if (puzzles[currentPuzzle].objectsParent != null)
-                    puzzles[currentPuzzle].objectsParent.SetActive(true); Debug.Log("Set active");
+                    puzzles[currentPuzzle].objectsParent.SetActive(true);
                 currentPuzzle++;
             }
         }
@@ -48,19 +48,16 @@ namespace Level
         {
             if (levelTransitionAnimator != null && currentPuzzle != puzzles.Length)
                 levelTransitionAnimator.Play("LevelTransition");
-            Debug.Log("Progress Started");
+
             yield return new WaitForSeconds(1);
-
             ProgressLogic();
-
-            yield return new WaitForSeconds(3);
-            Debug.Log("Progress Finished");
         }
 
         public void ProgressGame() => StartCoroutine(ProgressCoroutine());
 
         public void UpdatePuzzleElementDetails()
         {
+#if UNITY_EDITOR
             for (int i = 0; i < puzzles.Length; i++)
             {
                 if (Application.isPlaying)
@@ -75,6 +72,7 @@ namespace Level
                 else
                     puzzles[i].name = "Puzzle " + i.ToString();
             }
+#endif
         }
 
         public void EndGame()
