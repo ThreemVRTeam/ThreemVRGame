@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2094544115577183133}
   - component: {fileID: 1347734026759178316}
   - component: {fileID: 5746029574775846843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ Animation:
   m_GameObject: {fileID: 612825482218630692}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 313d741472e2e874095a42ba0ce928d3, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 313d741472e2e874095a42ba0ce928d3, type: 2}
   m_WrapMode: 0
