@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.SceneManagement.SceneManager;
 
 namespace Level
 {
@@ -45,17 +46,15 @@ namespace Level
 
         public IEnumerator ProgressCoroutine()
         {
-            
-            if (levelTransitionAnimator != null)
+            if (levelTransitionAnimator != null && currentPuzzle != puzzles.Length)
                 levelTransitionAnimator.Play("LevelTransition");
             Debug.Log("Progress Started");
             yield return new WaitForSeconds(1);
+
             ProgressLogic();
 
             yield return new WaitForSeconds(3);
             Debug.Log("Progress Finished");
-            if (levelTransitionAnimator != null)
-                levelTransitionAnimator.Play("EmptyState");
         }
 
         public void ProgressGame() => StartCoroutine(ProgressCoroutine());
@@ -80,9 +79,15 @@ namespace Level
 
         public void EndGame()
         {
-            //Play end animation
+            levelTransitionAnimator.Play("LevelEnd");
+            StartCoroutine(ResetScene());
         }
 
+        private IEnumerator ResetScene()
+        {
+            yield return new WaitForSeconds(6.75f);
+            LoadScene(GetActiveScene().name);
+        }
     }
 }
 
