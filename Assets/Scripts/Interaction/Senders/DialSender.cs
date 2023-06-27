@@ -21,7 +21,6 @@ namespace Interaction
         {
             if (knob != null)
             {
-                Debug.Log($"Knob actual value:{knob.value}, Knob target value: {targetValue}");
                 if (knob.value - targetValue < 0.05f)
                 {
                     ActivateTargets();
