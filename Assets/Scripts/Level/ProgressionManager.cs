@@ -26,10 +26,10 @@ namespace Level
         }
         private void Start()
         {
-            ProgressGame(); 
+            ProgressLogic(); 
         }
 
-        public void ProgressGame()
+        public void ProgressLogic()
         {
             if (currentPuzzle == puzzles.Length)
             {
@@ -39,25 +39,26 @@ namespace Level
             {
                 if (puzzles[currentPuzzle].objectsParent != null)
                     puzzles[currentPuzzle].objectsParent.SetActive(true); Debug.Log("Set active");
-
                 currentPuzzle++;
             }
         }
 
-        public IEnumerator Progress()
+        public IEnumerator ProgressCoroutine()
         {
+            
             if (levelTransitionAnimator != null)
                 levelTransitionAnimator.Play("LevelTransition");
             Debug.Log("Progress Started");
-            yield return new WaitForSeconds(2);
-
-            ProgressGame();
+            yield return new WaitForSeconds(1);
+            ProgressLogic();
 
             yield return new WaitForSeconds(3);
             Debug.Log("Progress Finished");
             if (levelTransitionAnimator != null)
                 levelTransitionAnimator.Play("EmptyState");
         }
+
+        public void ProgressGame() => StartCoroutine(ProgressCoroutine());
 
         public void UpdatePuzzleElementDetails()
         {
@@ -101,7 +102,7 @@ namespace Level.CustomInspector
 
             EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.Space();
-                if (GUILayout.Button("Progress", EditorStyles.miniButton, GUILayout.MaxWidth(120))) script.StartCoroutine(script.Progress());
+                if (GUILayout.Button("Progress", EditorStyles.miniButton, GUILayout.MaxWidth(120))) script.StartCoroutine(script.ProgressCoroutine());
                 EditorGUILayout.Space();
             EditorGUILayout.EndHorizontal();
 
