@@ -176,6 +176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139640409952446871, guid: 380302e1f369f414face4554688e176d,
         type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139640409952446871, guid: 380302e1f369f414face4554688e176d,
+        type: 3}
       propertyPath: m_VolumeLayerMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
