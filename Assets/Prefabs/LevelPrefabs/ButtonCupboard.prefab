@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3567610424084099671}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: -0.0030876526, y: 0.0030493645, z: -0.0019251643}
   m_LocalScale: {x: 0.008878809, y: 0.010209945, z: 0.017570553}
   m_ConstrainProportionsScale: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   doorToMove: {fileID: 2717287011248539772}
   duration: 2
   slideAmount: {x: 0, y: 0, z: 0}
-  rotateAmount: {x: 0, y: 0, z: -100}
+  rotateAmount: {x: 0, y: 0, z: -125}
   scaleAmount: {x: 0, y: 0, z: 0}
 --- !u!82 &-5798057231827274173
 AudioSource:

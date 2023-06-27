@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3342236196723263236, guid: a65cd717bf3aa794286d3a9cc6dd3a74, type: 3}
+  - {fileID: 2100000, guid: 7bb4332544895df4982750e1c6f6902c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,8 +92,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353821390302406258}
-  - component: {fileID: 4380848974923877878}
-  - component: {fileID: 708659299036046282}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -121,112 +119,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4380848974923877878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838152325843958984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d81ec98204a3414aa0d05fb48a57442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_SelectMode: 0
-  m_CustomReticle: {fileID: 0}
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 0}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 1.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &708659299036046282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838152325843958984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43aaa9fb2589a09489fe0efe15e09f29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventReceiverObjects:
-  - {fileID: 8544100174306213926}
-  targets: []
-  knob: {fileID: 0}
-  targetAngle: 90
 --- !u!1 &2919084243484906273
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +213,7 @@ GameObject:
   - component: {fileID: 1922376134266552491}
   - component: {fileID: 7742723160611920068}
   - component: {fileID: 7609930003676435012}
+  - component: {fileID: 4074305360784861759}
   m_Layer: 0
   m_Name: DialComponent
   m_TagString: Untagged
@@ -356,7 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 4074305360784861759}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -424,9 +318,9 @@ MonoBehaviour:
   m_Handle: {fileID: 7860301877438592256}
   m_Value: 0.5
   m_ClampedMotion: 1
-  m_MaxAngle: 90
-  m_MinAngle: -90
-  m_AngleIncrement: 0
+  m_MaxAngle: 180
+  m_MinAngle: -180
+  m_AngleIncrement: 5
   m_PositionTrackedRadius: 0.1
   m_TwistSensitivity: 1.5
   m_OnValueChange:
@@ -448,7 +342,20 @@ MonoBehaviour:
   - {fileID: 0}
   targets: []
   knob: {fileID: 0}
-  targetAngle: 0
+  targetAngle: 150
+--- !u!65 &4074305360784861759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224911542963327059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008, y: 0.0007950821, z: 0.008}
+  m_Center: {x: -0.00008476183, y: 0.0011931116, z: 2.0993993e-10}
 --- !u!1 &7814872128354660955
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3342236196723263236, guid: a65cd717bf3aa794286d3a9cc6dd3a74, type: 3}
+  - {fileID: 2100000, guid: 7bb4332544895df4982750e1c6f6902c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -593,7 +500,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3342236196723263236, guid: a65cd717bf3aa794286d3a9cc6dd3a74, type: 3}
+  - {fileID: 2100000, guid: 3b9f6571728344c4bb24b3131ac72a6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
