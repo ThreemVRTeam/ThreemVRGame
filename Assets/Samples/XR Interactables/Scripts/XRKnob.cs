@@ -254,12 +254,12 @@ namespace UnityEngine.XR.Content.Interaction
             var radiusOffset = transform.TransformVector(localOffset).magnitude;
             localOffset.Normalize();
 
-            var localForward = transform.InverseTransformDirection(interactorTransform.forward);
+            var localForward = transform.InverseTransformDirection(-interactorTransform.up);
             var localY = Math.Abs(localForward.y);
             localForward.y = 0.0f;
             localForward.Normalize();
 
-            var localUp = transform.InverseTransformDirection(interactorTransform.up);
+            var localUp = transform.InverseTransformDirection(interactorTransform.forward);
             localUp.y = 0.0f;
             localUp.Normalize();
 
@@ -338,7 +338,7 @@ namespace UnityEngine.XR.Content.Interaction
             }
 
             if (m_Handle != null)
-                m_Handle.localEulerAngles = new Vector3(0.0f, angle, 0.0f);
+                m_Handle.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
         }
 
         void SetValue(float value)
