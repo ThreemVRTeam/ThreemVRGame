@@ -28,7 +28,8 @@ namespace Interaction
 
             if (other.CompareTag(playerTag))
             {
-                StartCoroutine(progressionManager.Progress());
+                progressionManager.ProgressGame();
+
                 Destroy(gameObject);
             }
         }
