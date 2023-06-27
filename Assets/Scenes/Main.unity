@@ -656,11 +656,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3012403200374909722, guid: cd18a2be9b106be42b1ff05a7d5bdca9,
         type: 3}
-      propertyPath: startActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012403200374909722, guid: cd18a2be9b106be42b1ff05a7d5bdca9,
-        type: 3}
       propertyPath: progressionManager
       value: 
       objectReference: {fileID: 1074404353}
@@ -1407,7 +1402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &966186377
 Transform:
   m_ObjectHideFlags: 0
