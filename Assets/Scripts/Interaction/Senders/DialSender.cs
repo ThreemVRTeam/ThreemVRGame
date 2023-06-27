@@ -9,20 +9,23 @@ namespace Interaction
     public class DialSender : EventSender
     {
         [HideInInspector] public XRKnob knob;
-        [Range(-180, 180)] public int targetAngle = 0;
-        private float targetValue;
-        private void OnEnable()
+        [Range(-180, 180)] [SerializeField] public int targetAngle = 150;
+        private float targetValue = 0;
+        private void Start()
         {
-            knob = GetComponent<XRKnob>();
-            Assert.IsNotNull(knob, "No XR Knob component on dial, please add XR Knob component");
+            knob = gameObject.GetComponent<XRKnob>();
             // map value, new value = (value - from1) / (to1 - from1) * (to2 - from2) + from2
-            targetValue = (targetAngle - -180) / (180 - -180) * (1 - 0) + 0;
+            targetValue = ((float)targetAngle - -180) / (180 - -180) * (1 - 0) + 0;
         }
         public void CheckAngle()
         {
-            if (knob.value - targetValue < 0.05)
+            if (knob != null)
             {
-                ActivateTargets();
+                Debug.Log($"Knob actual value:{knob.value}, Knob target value: {targetValue}");
+                if (knob.value - targetValue < 0.05f)
+                {
+                    ActivateTargets();
+                }
             }
         }
     }

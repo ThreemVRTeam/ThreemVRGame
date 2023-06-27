@@ -420,6 +420,21 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7860301877438592256, guid: f07f303ae77c84a43b8c936ca53471ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860301877438592256, guid: f07f303ae77c84a43b8c936ca53471ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860301877438592256, guid: f07f303ae77c84a43b8c936ca53471ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 708659299036046282, guid: f07f303ae77c84a43b8c936ca53471ba, type: 3}
     - {fileID: 4380848974923877878, guid: f07f303ae77c84a43b8c936ca53471ba, type: 3}
